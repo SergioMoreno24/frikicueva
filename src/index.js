@@ -2,12 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import NavBar from './components/NavBar';
 import reportWebVitals from './reportWebVitals';
 
+/*function App(){
+  return <p>Hola Mundo</p>
+}*/
+
+/*let App = () => {
+  return(
+    <p>Hola Mundo</p>
+  )
+}*/
+
+//Estos componentes deben regresar un nodo
+/*let App = () => {
+  return(
+    <>
+      <p>Hola Mundo</p>
+      <a href="https://www.facebook.com">Link</a>
+    </>
+  )
+}*/
+
 ReactDOM.render(
-  <React.StrictMode>
+  <NavBar/>,
+  document.getElementById('navbar')
+)
+
+ReactDOM.render(
+  /*<React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>,*/
+  <App/>,
   document.getElementById('root')
 );
 
