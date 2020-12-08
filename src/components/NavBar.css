@@ -1,39 +1,8 @@
-.navbar{
-    background-color: rgb(35, 35, 35);
-    color: rgb(245, 245, 245);
-    overflow: auto;
-    padding: 0;
+.elementoMenuPrincipal > a{
+    color: white;
+    text-decoration: none;
 }
 
-.menu{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.logo{
-    display: block;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-right: 1.5em;
-    margin-left: 1.5em;
-    padding: 0px;
-}
-
-.elementoMenu {
-    cursor: pointer;
-    display: inline;
-    float: left;
-    padding: 0;
-}
-
-.elementoMenu:hover{
-    background-color: rgb(85, 85, 85);
-}
-
-.textoMenu {
-    display: block;
-    font-size: 1.1em;
-    margin-right: 1em;
-    margin-left: 1em;
+.elementoMenuPrincipal:hover{
+    background-color: lightslategray;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import NavBar from './components/NavBar';
 import reportWebVitals from './reportWebVitals';
 
 /*function App(){
@@ -26,15 +25,9 @@ import reportWebVitals from './reportWebVitals';
 }*/
 
 ReactDOM.render(
-  <NavBar/>,
-  document.getElementById('navbar')
-)
-
-ReactDOM.render(
-  /*<React.StrictMode>
+  <React.StrictMode>
     <App />
-  </React.StrictMode>,*/
-  <App/>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
