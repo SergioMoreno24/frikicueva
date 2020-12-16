@@ -5,8 +5,8 @@ let ItemCount = ({ stock, initial }) => {
     let numeroSeleccionado = parseInt(numInicial);
 
     const aumentarNum = () => {
-        numeroSeleccionado += 1;
-        if(numeroSeleccionado <= stock){
+        if(numeroSeleccionado < stock){
+            numeroSeleccionado += 1;
             cambiarNum(numeroSeleccionado);
         }
         else{
@@ -15,12 +15,12 @@ let ItemCount = ({ stock, initial }) => {
     }
 
     const disminuirNum = () => {
-        numeroSeleccionado -= 1;
-        if(numeroSeleccionado >= 0){
+        if(numeroSeleccionado > 1){
+            numeroSeleccionado -= 1;
             cambiarNum(numeroSeleccionado);
         }
         else{
-            alert('Ya está en cero');
+            alert('No puede ser cero');
         }
     }
 
@@ -29,11 +29,11 @@ let ItemCount = ({ stock, initial }) => {
         <span className="lead">Descripción del producto</span>
         <div className="input-group my-2">
             <div className="input-group-prepend">
-                <span className="input-group-text bg-dark text-light px-4 cursor-pointer" onClick={ disminuirNum }>-</span>
+                <button className="input-group-text btn btn-dark px-4 cursor-pointer" onClick={ disminuirNum }>-</button>
             </div>
             <input type="text" className="form-control bg-light text-center" readOnly value={ numInicial }/>
             <div className="input-group-append">
-                <span className="input-group-text bg-dark text-light px-4 cursor-pointer" onClick={ aumentarNum }>+</span>
+                <button className="input-group-text btn btn-dark px-4 cursor-pointer" onClick={ aumentarNum }>+</button>
             </div>
         </div>
         <button className="btn btn-outline-primary">Agregar al carrito</button>
