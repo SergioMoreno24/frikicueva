@@ -4,8 +4,8 @@ import CartWidget from './CartWidget.js';
 
 const NavBar = () => {
     const titulos = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4', 'Opción 5'];
-    const listaTitulos = titulos.map((titulo) =>
-        <li key={ titulo } onClick={ () => alert(titulo)} className="elementoMenuPrincipal py-2 px-3"><a href="index.html">{ titulo }</a></li>
+    const listaTitulos = titulos.map((titulo, indice) =>
+        <li key={ indice + 1 } onClick={ () => alert(titulo)} className="elementoMenuPrincipal py-2 px-3"><a href="index.html">{ titulo }</a></li>
     );
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

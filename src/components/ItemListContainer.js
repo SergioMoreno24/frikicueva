@@ -1,11 +1,11 @@
 import React from 'react';
+import ItemCount from './ItemCount.js';
 
 let ItemListContainer = (props) => {
+
     return(
         <div className="container-fluid py-2">
-            <span>
-                { props.greeting }
-            </span>
+            <ItemCount stock={5} initial={1}/>
         </div>
     )
 }
