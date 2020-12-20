@@ -19,3 +19,9 @@ code {
 .cursor-pointer{
   cursor: pointer;
 }
+
+@media screen and (max-width: 720px) {
+  .w100-mobile{
+    width: 100% !important;
+  }
+}

@@ -6,7 +6,7 @@ let App = () => {
   return (
     <>
       <NavBar/>
-      <ItemListContainer greeting="Aquí va a ir el catálogo de productos"/>
+      <ItemListContainer />
     </>
   );
 }
