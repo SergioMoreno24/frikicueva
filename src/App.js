@@ -8,7 +8,7 @@ let App = () => {
   return (
     <BrowserRouter>
       <NavBar/>
-      <ItemListContainer />
+      {/*<ItemListContainer />*/}
       <ItemDetailContainer/>
     </BrowserRouter>
   );

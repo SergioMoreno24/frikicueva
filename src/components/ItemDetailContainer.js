@@ -16,6 +16,7 @@ let ItemDetailContainer = () => {
             getItems()
             .then((resultado) => {
                 return(
+                    //Item hardcodeado
                     setItem({id : 1, title : "Título de prueba", price : "$250", pictureUrl : "https://picsum.photos/id/1048/250/400"})
                 )       
             })
