@@ -13,6 +13,7 @@ let ItemListContainer = () => {
                 for(let i = 1; i <= numObj; i++){
                     arreglo.push({id : i, title : "Titulo " + i, price : "$" + i, pictureUrl : "url" + i});
                 }
+                
                 arreglo.length > 1 ?
                 resolve(arreglo)
                 :
