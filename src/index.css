@@ -20,6 +20,10 @@ code {
   cursor: pointer;
 }
 
+.onequarter-width{
+  width: 25% !important;
+}
+
 @media screen and (max-width: 720px) {
   .w100-mobile{
     width: 100% !important;

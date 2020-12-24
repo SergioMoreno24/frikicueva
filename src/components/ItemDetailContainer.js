@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail.js';
 
 const getItems = () => {
     return new Promise((resolve, reject) => {
-        resolve('Bla');
+        resolve(1);
     })
     
 }
@@ -16,7 +16,7 @@ let ItemDetailContainer = () => {
             getItems()
             .then((resultado) => {
                 return(
-                    setItem(resultado)
+                    setItem({id : 1, title : "Título de prueba", price : "$250", pictureUrl : "https://picsum.photos/id/1048/250/400"})
                 )       
             })
             .catch((err) => {
@@ -26,10 +26,12 @@ let ItemDetailContainer = () => {
     }, [])
 
     return(
-        item ?
-        <ItemDetail item={{id : 1, title : "Título de prueba", price : "$250", pictureUrl : "https://picsum.photos/100"}}/>
-        :
-        ''
+        <div className="container">
+            {item ?
+            <ItemDetail item={ item }/>
+            :
+            'Cargando detalles...'}
+        </div>
     )
 }
 
