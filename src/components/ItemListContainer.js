@@ -3,38 +3,24 @@ import ItemList from './ItemList.js';
 
 let ItemListContainer = () => {
     const [items, setItems] = useState(false);
-    //Tiempo de dos segundos.
     useEffect(()=>{
-        setTimeout(() => {
-            //Promise
-            const crearObjetos = new Promise((resolve, reject) => {
-                let numObj = 10;
-                let arreglo = [];
-                for(let i = 1; i <= numObj; i++){
-                    arreglo.push({id : i, title : "Titulo " + i, price : "$" + i, pictureUrl : "url" + i});
-                }
-                
-                arreglo.length > 1 ?
-                resolve(arreglo)
-                :
-                reject('Algo salió mal');
-            });
-
-            //console.log(crearObjetos);
-            crearObjetos.then( result => {
-                setItems(result);
-            })
-            .catch(err => {
-                //console.log(err);
-                document.getElementById('cargando').textContent = err;
-            })
-            
-        }, 2000);
+        fetch('https://gateway.marvel.com/v1/public/characters?nameStartsWith=spider-m&limit=5&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108')
+        .then((resultado) => {
+            if(resultado.status === 200){
+                return resultado.json()
+            }
+        })
+        .then((resultado) => {
+            setItems(resultado.data.results)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     }, []);
 
     return(
         items ?
-        <div className="container py-2 mx-auto text-center">
+        <div className="container-fluid py-2 mx-auto text-center">
             <ItemList items={ items } />
         </div>
         :

@@ -1,17 +1,19 @@
 import React from 'react';
 import './NavBar.css';
 import CartWidget from './CartWidget.js';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    const titulos = ['Opción1', 'Opción2', 'Opción3', 'Opción4', 'Opción5'];
+    const titulos = ['Category'];
     const listaTitulos = titulos.map((titulo, indice) =>
-        <li key={ indice + 1 } className="elementoMenuPrincipal py-2 px-3"><Link to={'/' + titulo}>{ titulo }</Link></li>
+        <li key={ indice + 1 } className="elementoMenuPrincipal py-2 px-3">
+            <NavLink to={'/' + titulo }>{ titulo }</NavLink>
+        </li>
     );
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Frikicueva</Link>
+                <NavLink className="navbar-brand" to="/">Frikicueva</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
