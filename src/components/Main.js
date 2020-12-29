@@ -8,19 +8,15 @@ const Main = () => {
     return (
         <main>
             <Switch>
-
                 <Route exact path="/">
                     <ItemListContainer/>
                 </Route>
-
                 <Route exact path="/category">
                     <ItemListContainer/>
                 </Route>
-
                 <Route exact path="/item/:id">
                     <ItemDetailContainer />
                 </Route>
-
             </Switch>
       </main>
     )
