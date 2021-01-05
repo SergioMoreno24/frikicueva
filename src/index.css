@@ -29,3 +29,21 @@ code {
     width: 100% !important;
   }
 }
+
+.contenedorItems{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 2rem;
+}
+
+.contenedorItems > .item{
+  flex-basis: 15rem;
+}
+
+.height-50{
+  height: 80vh;
+}
+
+

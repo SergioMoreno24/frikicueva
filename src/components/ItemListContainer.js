@@ -4,7 +4,7 @@ import ItemList from './ItemList.js';
 let ItemListContainer = () => {
     const [items, setItems] = useState(false);
     useEffect(()=>{
-        fetch('https://gateway.marvel.com/v1/public/characters?nameStartsWith=spider-m&limit=5&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108')
+        fetch('https://gateway.marvel.com/v1/public/comics?titleStartsWith=spider-man&orderBy=title&limit=100&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108')
         .then((resultado) => {
             if(resultado.status === 200){
                 return resultado.json()

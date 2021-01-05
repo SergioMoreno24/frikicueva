@@ -7,7 +7,7 @@ let ItemDetailContainer = () => {
     const params = useParams();
 
     useEffect(() => {
-        let detallesPersonaje = fetch('https://gateway.marvel.com/v1/public/characters?id=' + params.id + '&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108')
+        let detallesPersonaje = fetch('https://gateway.marvel.com/v1/public/comics?id=' + params.id + '&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108')
 
         detallesPersonaje.then((respuesta) => {
             if(respuesta.status === 200){

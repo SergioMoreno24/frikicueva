@@ -5,7 +5,7 @@ let ItemCount = ({ stock, initial }) => {
     const [numInicial, cambiarNum] = useState(initial);
 
     return(
-    <article className="w100-mobile py-3 px-3 text-center border">
+    <article className="w100-mobile py-3 px-3 text-center border w-50">
         <div className="input-group my-2">
             <div className="input-group-prepend">
                 <button className="input-group-text btn btn-dark cursor-pointer" onClick={ () => numInicial > 1 ? cambiarNum(numInicial - 1) : alert('No puede ser cero') }>-</button>

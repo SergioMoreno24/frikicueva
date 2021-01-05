@@ -4,7 +4,7 @@ import CartWidget from './CartWidget.js';
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-    const titulos = ['Category'];
+    const titulos = ['Spider-Man'];
     const listaTitulos = titulos.map((titulo, indice) =>
         <li key={ indice + 1 } className="elementoMenuPrincipal py-2 px-3">
             <NavLink to={'/' + titulo }>{ titulo }</NavLink>

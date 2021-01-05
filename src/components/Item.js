@@ -7,8 +7,8 @@ let Item = ( {item} ) => {
         item ?
         <>
             <img alt={ 'Imagen ' + item.name } className="img-fluid" src={ urlImg }/>
-            <p className="mt-2 mb-0 lead">{item.name}</p>
-            
+            <p className="mt-2 mb-0 lead">{item.title}</p>
+            <p className="my-1 lead">${ item.prices[0].price }</p>
             <Link to={`/item/${item.id}`} className="lead text-primary text-decoration-none">
                 Ver más
             </Link>
