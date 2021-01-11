@@ -1,8 +1,0 @@
-.elementoMenuPrincipal > a{
-    color: white;
-    text-decoration: none;
-}
-
-.elementoMenuPrincipal:hover{
-    background-color: lightslategray;
-}

@@ -21,10 +21,10 @@ let ItemDetail = ({ item }) => {
                 <p className="lead">
                     { descripcion }
                 </p>
-                <p className="lead">
+                <p className="lead fontweight-500">
                     ${ item.prices[0].price }
                 </p>
-                <ItemCount stock={item.stock} initial={inicial}/>
+                <ItemCount stock={ item.stock } initial={ inicial } item={item}/>
             </div>
         </div>
     )

@@ -1,0 +1,26 @@
+.contenedorCargando{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+@keyframes cargando {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes rotar {
+    25% { transform: rotate(90deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.logoCargando{
+    height: 15em;
+    width: 15em;
+    animation-name: cargando;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
