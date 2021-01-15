@@ -4,18 +4,10 @@ import { contextoCarrito } from './CartContext';
 let ItemCount = ({ stock, initial, item }) => {
     const [ cantidad, setCantidad ] = useState(initial);
     const contextCarrito = useContext(contextoCarrito);
-    const { elementosCarrito, setElementosCarrito, isInCart } = contextCarrito;
+    const { agregarElemento } = contextCarrito;
 
     const cambiarElementosCarrito = () => {
-        if(!isInCart(item.id)){
-            let lista = elementosCarrito;
-            lista.push({comic : item, cantidad : cantidad });
-            setElementosCarrito(lista);
-            console.log(elementosCarrito);
-        }
-        else{
-            alert('Ya tienes este comic en tu carrito');
-        }
+        agregarElemento(item, cantidad);
     }
 
     return(

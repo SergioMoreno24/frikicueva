@@ -11,6 +11,7 @@ const ItemListContainer = () => {
     useEffect(()=>{
         let comicsOk = [];
         let url = `https://gateway.marvel.com/v1/public/comics?titleStartsWith=${categoria}&orderBy=title&limit=100&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108`;
+        //console.log(url);
         fetch(url)
         .then((resultado) => {
             if(resultado.status === 200){

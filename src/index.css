@@ -6,7 +6,7 @@ body {
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px;
-  background-color: rgba(250, 250, 250, 0.5);
+  background-color: rgb(245, 245, 245);
 }
 
 code {
@@ -23,6 +23,23 @@ code {
 
 .onequarter-width{
   width: 25% !important;
+}
+
+.fontsize-15{
+  font-size: 1.5em;
+}
+
+.fontsize-2{
+  font-size: 2em;
+}
+
+
+.border-radius-05{
+  border-radius: 0.5em;
+}
+
+.bg-white{
+  background-color: white;
 }
 
 @media screen and (max-width: 720px) {

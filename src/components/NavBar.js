@@ -13,6 +13,7 @@ const NavBar = () => {
             </li>
         </NavLink>
     );
+    
     return(
         <nav className="navbar navbar-expand-lg navbar-dark py-0 navbar-friki">
             <div className="container">

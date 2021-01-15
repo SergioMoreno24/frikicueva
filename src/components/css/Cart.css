@@ -1,0 +1,28 @@
+.contenedor-articulo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1.5rem;
+    column-gap: 2em;
+    align-items: center;
+    border: solid lightgray 1px;
+}
+
+.contenedor-articulo > .articulo {
+    flex-basis: 15%;
+}
+
+.img-carrito{
+    height: 150px !important;
+    width: 100px !important;
+}
+
+#contenedor-carrito{
+    width: 50%;
+}
+
+#total-carrito{
+    float: right;
+    text-align: right;
+}
