@@ -13,36 +13,28 @@ const ItemListContainer = () => {
         const categoriaNumber = parseInt(categoria);
         const db = getFireStore();
         const comicCollection = db.collection('comics');
+        let query;
 
+        //Si hay categoría, se muestran filtrados, si no, se muestra todo.
         categoriaNumber ?
-            comicCollection
-            .where('categoria', '==', categoriaNumber)
-            .get()
-            .then((querySnapshot) => {
-                let comicsOk = [];
-                querySnapshot.forEach((doc) => {
-                    comicsOk.push({ id : doc.id, ...doc.data() });
-                })
-                //console.log(comicsOk);
-                setItems(comicsOk);
+            query = comicCollection.where('categoria', '==', categoriaNumber)
+        : 
+            query = comicCollection
+        
+        //Leyendo datos de la BD.
+        query
+        .get()
+        .then((querySnapshot) => {
+            let comicsOk = [];
+            querySnapshot.forEach((doc) => {
+                comicsOk.push({ id : doc.id, ...doc.data() });
             })
-            .catch((err) => {
-                console.log(err);
-            })
-        :
-        comicCollection
-            .get()
-            .then((querySnapshot) => {
-                let comicsOk = [];
-                querySnapshot.forEach((doc) => {
-                    comicsOk.push({ id : doc.id, ...doc.data() });
-                })
-                //console.log(comicsOk);
-                setItems(comicsOk);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+            setItems(comicsOk);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+
     }, [categoria]);
 
     return(
