@@ -1,36 +1,48 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList.js';
+import { getFireStore } from '../firebase/firebase';
 import { useParams } from "react-router-dom";
 import Cargando from './Cargando.js';
 import './css/ItemList.css';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState();
-    const {categoria} = useParams()
+    const { categoria } = useParams()
 
     useEffect(()=>{
-        let comicsOk = [];
-        let url = `https://gateway.marvel.com/v1/public/comics?titleStartsWith=${categoria}&orderBy=title&limit=100&ts=261124&apikey=724de9bfb8d8c5f625ef680a41b011d8&hash=ed662371fd0bda1892b6f8935cdd7108`;
-        //console.log(url);
-        fetch(url)
-        .then((resultado) => {
-            if(resultado.status === 200){
-                return resultado.json()
-            }
-        })
-        .then((resultado) => {
-            let objeto = resultado.data.results;
-            //Hice esto porque hay muchas sin imagen y no me gustaba cómo se veía.
-            for(const key in objeto){
-                if(objeto[key].thumbnail.path.split('/')[10] !== 'image_not_available'){
-                    comicsOk.push(objeto[key])
-                }
-            }
-            setItems(comicsOk)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+        const categoriaNumber = parseInt(categoria);
+        const db = getFireStore();
+        const comicCollection = db.collection('comics');
+
+        categoriaNumber ?
+            comicCollection
+            .where('categoria', '==', categoriaNumber)
+            .get()
+            .then((querySnapshot) => {
+                let comicsOk = [];
+                querySnapshot.forEach((doc) => {
+                    comicsOk.push({ id : doc.id, ...doc.data() });
+                })
+                //console.log(comicsOk);
+                setItems(comicsOk);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        :
+        comicCollection
+            .get()
+            .then((querySnapshot) => {
+                let comicsOk = [];
+                querySnapshot.forEach((doc) => {
+                    comicsOk.push({ id : doc.id, ...doc.data() });
+                })
+                //console.log(comicsOk);
+                setItems(comicsOk);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }, [categoria]);
 
     return(

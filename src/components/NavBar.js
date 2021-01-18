@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 import logoNavBar from './img/logoNavBar.png';
 
 const NavBar = () => {
-    const titulos = ['Spider-Man', 'Spider-Woman', 'Spider-Gwen'];
+    const titulos = ['Spider-Man', 'Spider-Gwen', 'Spider-Woman'];
     const listaTitulos = titulos.map((titulo, indice) =>
-        <NavLink key={ indice + 1 } className="link-navbar" to={'/categoria/' + titulo }>
+        <NavLink key={ indice + 1 } className="link-navbar" to={'/categoria/' + (indice + 1) }>
             <li className="elemento-menu-principal py-2 px-3">
                 { titulo }
             </li>

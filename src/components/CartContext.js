@@ -7,18 +7,21 @@ const CartContext = ({ children }) => {
     const [elementosCarrito, setElementosCarrito] = useState([]);
 
     const estaEnCarrito = (id) => {
-        const resultado = elementosCarrito.find( item => item.comic.id === id );
+        const resultado = elementosCarrito.find( comic => comic.comic.id === id );
         return id === undefined ? undefined : resultado !== undefined;
     }
 
     const getNumElementos = () => {
-        //console.log(elementosCarrito.length);
-        return elementosCarrito.length;
+        let totalElementos = 0;
+        elementosCarrito.forEach(comic => {
+            totalElementos += comic.cantidad;
+        });
+        return totalElementos;
     }
 
-    const agregarElemento = (item, cantidad) => {
-        if(!estaEnCarrito(item.id)){
-            setElementosCarrito(elementosCarrito => [...elementosCarrito, {comic : item, cantidad : cantidad}])
+    const agregarElemento = (comic, cantidad) => {
+        if(!estaEnCarrito(comic.id)){
+            setElementosCarrito(elementosCarrito => [...elementosCarrito, {comic : comic, cantidad : cantidad}])
         }
         else{
             alert('Ya tienes este comic en tu carrito');
@@ -26,7 +29,7 @@ const CartContext = ({ children }) => {
     }
 
     const eliminarElemento = (id) => {
-        const elemento = elementosCarrito.find( item => item.comic.id === id );
+        const elemento = elementosCarrito.find( comic => comic.comic.id === id );
         let nuevoCarrito = elementosCarrito.filter( (articulo) => {
             return articulo !== elemento;
         })
@@ -35,8 +38,8 @@ const CartContext = ({ children }) => {
 
     const getTotalPrecios = () => {
         let total = 0;
-        elementosCarrito.forEach(element => {
-            total += element.comic.prices[0].price * element.cantidad;
+        elementosCarrito.forEach(comic => {
+            total += comic.comic.precio * comic.cantidad;
         });
         return Math.floor(total * 100) / 100;
     }

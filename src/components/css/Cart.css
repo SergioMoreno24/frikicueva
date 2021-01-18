@@ -18,10 +18,6 @@
     width: 100px !important;
 }
 
-#contenedor-carrito{
-    width: 50%;
-}
-
 #total-carrito{
     float: right;
     text-align: right;
