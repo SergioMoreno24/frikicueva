@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     row-gap: 1.5rem;
-    column-gap: 2em;
+    column-gap: 1em;
     align-items: center;
-    border: solid lightgray 1px;
+    /* border: solid rgba() 1px; */
+    box-shadow: 0 0 10px lightgray;
 }
 
 .contenedor-articulo > .articulo {
@@ -14,11 +15,6 @@
 }
 
 .img-carrito{
-    height: 150px !important;
-    width: 100px !important;
-}
-
-#total-carrito{
-    float: right;
-    text-align: right;
+    height: 120px !important;
+    width: 75px !important;
 }

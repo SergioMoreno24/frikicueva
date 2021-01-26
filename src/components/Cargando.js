@@ -1,6 +1,6 @@
 import React from 'react'
-import './css/Cargando.css';
-import logospidey from './img/logospidey.png';
+import '../css/Cargando.css';
+import logospidey from '../img/logospidey.png';
 
 const Cargando = () => {
     return (

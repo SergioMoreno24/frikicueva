@@ -1,0 +1,12 @@
+input {
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 0.5em;
+    border: solid 1px rgba(150, 150, 150, 0.7);
+    border-radius: 0.3em;
+}
+
+.div-input-form-compra{
+    border-bottom: solid 1px rgba(150, 150, 150, 0.9);
+    margin-bottom: 0.5em;
+}

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './css/NavBar.css';
+import '../css/NavBar.css';
 import { contextoCarrito } from './CartContext';
 
 let CartWidget = () => {

@@ -1,27 +1,28 @@
 import React, { useState, useContext } from 'react';
 import { contextoCarrito } from './CartContext';
+import '../css/ItemCount.css';
 
 let ItemCount = ({ stock, initial, item }) => {
     const [ cantidad, setCantidad ] = useState(initial);
     const contextCarrito = useContext(contextoCarrito);
     const { agregarElemento } = contextCarrito;
 
-    const cambiarElementosCarrito = () => {
+    const agregarElementosAlCarrito = () => {
         agregarElemento(item, cantidad);
     }
 
+    const liStock = []
+    for (let q = 1; q <= stock; q++) {
+        liStock.push(<option value={ q } key={ q }>{ q }</option>)
+    }
+
     return(
-    <article className="w100-mobile py-3 px-3 text-center border w-50">
-        <div className="input-group my-2">
-            <div className="input-group-prepend">
-                <button className="input-group-text btn btn-dark cursor-pointer" onClick={ () => cantidad > 1 ? setCantidad(cantidad - 1) : alert('No puede ser cero') }>-</button>
-            </div>
-            <input type="text" className="form-control bg-light text-center" readOnly value={ cantidad }/>
-            <div className="input-group-append">
-                <button className="input-group-text btn btn-dark cursor-pointer" onClick={ () => cantidad < stock ? setCantidad(cantidad + 1) : alert('No puedes agregar más elementos') }>+</button>
-            </div>
-        </div>
-        <button className="btn btn-outline-primary" onClick={ cambiarElementosCarrito }>Agregar al carrito</button>
+    <article className="w100-mobile">
+        <select className="select-cantidad mt-3" id="exampleFormControlSelect1" onChange={ (e) => setCantidad(parseInt(e.target.value)) }>
+            { liStock }
+        </select>
+        <button className="btn-spideycueva" onClick={ agregarElementosAlCarrito }>Agregar al carrito</button>
+
     </article>
     )
 }

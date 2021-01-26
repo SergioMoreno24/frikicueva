@@ -44,8 +44,19 @@ const CartContext = ({ children }) => {
         return Math.floor(total * 100) / 100;
     }
 
+    const vaciarCarrito = () => {
+        setElementosCarrito([]);
+    }
+
     return (
-        <Provider value={ { elementosCarrito : elementosCarrito, estaEnCarrito : estaEnCarrito, agregarElemento : agregarElemento, eliminarElemento : eliminarElemento, getTotalPrecios : getTotalPrecios, getNumElementos : getNumElementos } }>
+        <Provider value={ { elementosCarrito : elementosCarrito, 
+                            estaEnCarrito : estaEnCarrito, 
+                            agregarElemento : agregarElemento, 
+                            eliminarElemento : eliminarElemento, 
+                            getTotalPrecios : getTotalPrecios, 
+                            getNumElementos : getNumElementos,
+                            vaciarCarrito : vaciarCarrito } 
+                        }>
             { children }
         </Provider>
     )

@@ -1,0 +1,32 @@
+#gracias{
+    border-bottom: solid 1px #B11313;
+}
+
+#detalles-pedido{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.5rem;
+}
+#detalles-pedido > article {
+    flex-basis: 15rem;
+    border-left: solid 1px #B11313;
+    border-right: solid 1px#B11313;
+    border-collapse: unset;
+}
+
+#detalles-pedido > article > p {
+    margin-bottom: 0.2em;
+}
+
+@media screen and (max-width: 720px) {
+    #detalles-pedido > article {
+        border-bottom: solid 1px #B11313;
+        padding: 0.3em 0px;
+
+        border-left: none;
+        border-right:none;
+    }
+}
+  

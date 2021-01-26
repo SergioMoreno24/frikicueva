@@ -1,8 +1,8 @@
 import React from 'react';
-import './css/NavBar.css';
+import '../css/NavBar.css';
 import CartWidget from './CartWidget.js';
 import { NavLink } from "react-router-dom";
-import logoNavBar from './img/logoNavBar.png';
+import logoNavBar from '../img/logoNavBar.png';
 
 const NavBar = () => {
     const titulos = ['Spider-Man', 'Spider-Gwen', 'Spider-Woman'];

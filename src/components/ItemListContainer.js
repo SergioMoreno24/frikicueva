@@ -3,7 +3,7 @@ import ItemList from './ItemList.js';
 import { getFireStore } from '../firebase/firebase';
 import { useParams } from "react-router-dom";
 import Cargando from './Cargando.js';
-import './css/ItemList.css';
+import '../css/ItemList.css';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState();
